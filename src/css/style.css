@@ -295,6 +295,7 @@ button{
     background: none;
     outline: none;
     border: none;
+    
 
     z-index: 99;
 }
@@ -437,12 +438,7 @@ header{
     min-width: fit-content;
     margin-right: 3vw;
 }
-
-.hamburguer{
-    visibility: hidden;
-    display: hidden;
-}
-            
+      
 
 @media only screen and (max-width: 1200px){
 
@@ -541,36 +537,34 @@ header{
     display: grid;
     grid-template: repeat(2,clamp(200px, 900px,40vw)) / repeat(4,1fr);
     column-gap: 0;
-
-    .project-cell{
-        
-        position: relative;
-        overflow: hidden;
-
-        .overlay{
-            position: absolute;
-            top: 0;
-            left:0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-    }
-        
 }
 
+.project-cell{
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}  
+        
 @media only screen and (max-width: 1200px)
 {
     .project-grid{
         grid-template: repeat(2,clamp(200px, 600px, 40vw)) / repeat(4,1fr);
-    
-        .project-cell{
-            
-            position: relative;
-            overflow: hidden;
-        }            
     }
+    
+    .project-cell{
+        
+        position: relative;
+        overflow: hidden;
+    }   
 }
 
 @media only screen and (max-width: 600px)
@@ -579,24 +573,25 @@ header{
         width: 100%;
         display: grid;
         grid-template: repeat(4,clamp(200px, 45vh, 80vw)) / repeat(2,1fr);
-    
-        .project-cell{
-            
-            position: relative;
-            overflow: hidden;
-    
-            .overlay{
-                position: absolute;
-                top: 0;
-                left:0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
-
-        }
-            
     }
+
+    .project-cell{
+        
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .overlay{
+        position: absolute;
+        top: 0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+            
+    
 }
 /*
 ****Button Projects****
@@ -608,47 +603,46 @@ header{
     flex-direction: column;
     align-content: center;
     justify-content: center;
-
-    .projects-button{
-        margin: 0 auto;
-    }
-
-    .call-to-action-white{
-        margin: 5rem auto 0; 
-
-        font-size: var(--font-size-Xlarge);
-        font-family: "PT Sans Narrow", sans-serif;
-        letter-spacing: clamp(0.1vw,.3vw,0.3rem);
-        font-weight: 100;
-        word-spacing: 1rem;
-
-        .call-to-action-orange{
-
-            color: coral;
-        }
-    }
 }
+
+.projects-button{
+    margin: 0 auto;
+}
+
+.call-to-action-white{
+    margin: 5rem auto 0; 
+
+    font-size: var(--font-size-Xlarge);
+    font-family: "PT Sans Narrow", sans-serif;
+    letter-spacing: clamp(0.1vw,.3vw,0.3rem);
+    font-weight: 100;
+    word-spacing: 1rem;
+}
+
+.call-to-action-white 
+.call-to-action-orange{
+
+    color: coral;
+}
+
 
 @media only screen and (max-width: 600px){
 
     .more-projects{
       margin: 3rem auto 0;  
-
-        .call-to-action-white{
-            margin: 3rem auto 0; 
-
-            word-spacing: .5rem;
-
-            .call-to-action-orange{
-
-                color: coral;
-            }
-        }
     }
 
+    .call-to-action-white{
+        margin: 3rem auto 0; 
+        word-spacing: .5rem;
+    }
     
+    .call-to-action-white
+    .call-to-action-orange{
 
-    
+        color: coral;
+    }
+            
 }
 
 /*
@@ -662,64 +656,63 @@ header{
     justify-content: end;
     align-content: end;
     max-width: 80%;
+}
+.form-left{
 
+    flex: 1 1 20%;
+    margin-right: .5rem;        
+}
 
-    .form-left{
+.form-left p{
+    
+    margin: .5rem 1ch;
+    width: 30ch;
+            
+}
 
-        flex: 1 1 20%;
-        margin-right: .5rem;
+.form-input{
 
-        & p{
-            margin: .5rem 1ch;
-            width: 30ch;
-        }        
-    }
+    flex: 2 0 80%;
+    display: flex;
 
-    .form-input{
+}   
 
-        flex: 2 0 80%;
-        display: flex;
+.form-input input,  
+.form-input textarea{
+    background-color: var(--color-background-lighter);
+    outline: none;
+    border-style:hidden;
+    border-radius: 10px / 10px;
+    color:var(--default-color);
+    padding: .2rem .5rem;
+    min-width: 10ch;
+    min-height: 2rem;
 
-        
-        & input, & textarea{
-            background-color: var(--color-background-lighter);
-            outline: none;
-            border-style:hidden;
-            border-radius: 10px / 10px;
-            color:var(--default-color);
-            padding: .2rem .5rem;
-            min-width: 10ch;
-            min-height: 2rem;
+}
 
-        }
+.form-input-info{
+    flex: 0 1 70%;
+    display:grid;
+    grid: repeat(2, 1fr) / repeat(2, 1fr);
+    column-gap: .8rem;
+    row-gap: .8rem;
+}
 
-        .form-input-info{
-            flex: 0 1 70%;
-            display:grid;
-            grid: repeat(2, 1fr) / repeat(2, 1fr);
-            column-gap: .8rem;
-            row-gap: .8rem;
-        }
-
-        #input-message{
-            flex: 1 1 30%;
-            resize: none;
-            margin-left: .8rem;
-            text-align: start;
-            padding-top: 1rem;
-        }
-
-    }
-
+#input-message{
+    flex: 1 1 30%;
+    resize: none;
+    margin-left: .8rem;
+    text-align: start;
+    padding-top: 1rem;
 }
 
 .form-send{
     max-width: 80%;
-    margin: 1rem auto;
-    .send{
-        float: right;
-    }
-    
+    margin: 1rem auto;   
+}
+
+.form-send .send{
+    float: right;
 }
 
 @media only screen and (max-width: 600px){
@@ -728,50 +721,49 @@ header{
         margin: 1vh auto;
         max-width: 90%;
         flex-direction: column;
-
-
-        .form-left{
-            flex: 1 0 5rem;    
-            margin: 1rem;
-            display: flex;
-            flex-direction:column;
-            justify-content: center;
-            align-content: center;
-            text-align: center;
-            flex-wrap: wrap;
-
-    
-            & p{
-                display: inline;
-                margin: .25rem 1ch;
-                width: 30ch;
-            }        
-        }
-
-        .form-input{
-            margin-top: 1rem;
-            flex: 2 0 70%;
-
-            & input, & textarea{
-                border-radius: 10px / 10px;
-                padding: .2rem .3rem;
-            }
-
-            .form-input-info{
-                column-gap: .3rem;
-                row-gap: .3rem;
-            }
-
-            #input-message{
-                flex: 1 1 30%;
-                margin-left: .3rem;
-                padding-top: .5rem;
-            }
-        }
-
     }
 
+    .form-left{
+        flex: 1 0 5rem;    
+        margin: 1rem;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .form-left p{
+        display: inline;
+        margin: .25rem 1ch;
+        width: 30ch;
+    }        
+        
+    .form-input{
+        margin-top: 1rem;
+        flex: 2 0 70%;
+    }
+
+    .form-input input,
+    .form-input textarea{
+        border-radius: 10px / 10px;
+        padding: .2rem .3rem;
+    }
+
+    .form-input-info{
+        column-gap: .3rem;
+        row-gap: .3rem;
+    }
+
+    #input-message{
+        flex: 1 1 30%;
+        margin-left: .3rem;
+        padding-top: .5rem;
+    }      
+
 }
+
 /*
 ****Footer****
 */
@@ -782,30 +774,32 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: end;
+}
 
-    & ul li a,
-    p{
-        color: var(--default-color-placeholder);
-    }
-
+footer ul li a,
+footer p{
+    color: var(--default-color-placeholder);
 }
 
 @media only screen and (max-width: 600px){
 
     footer{
         margin: 3rem auto 1rem;
-
-        & h2{
-            flex: 1 1 20%;
-        }
-        .links{
-            visibility: hidden;
-            width: 1rem;
-        }
-        & p{
-            flex: 1 1 100%;
-            text-align: end;            
-        }
     }
+
+    footer h2{
+        flex: 1 1 20%;
+    }
+
+    .links{
+        visibility: hidden;
+        width: 1rem;
+    }
+    
+    footer p{
+        flex: 1 1 100%;
+        text-align: end;            
+    }
+    
 }
 
