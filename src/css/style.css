@@ -95,9 +95,16 @@ body {
 ****Selectors****
 */
 
-h1, h2{
+h1, h1 a, h2{
     font-family: "Archivo Black", sans-serif;
     font-size: var(--font-size-Xlarge);
+    text-decoration: none;
+    color: var(--default-color);
+}
+
+h1 a:hover
+{
+    text-decoration: none;
 }
 
 h3{
@@ -191,7 +198,9 @@ li{
     }
 }
 
-
+button{
+    cursor: pointer;
+}
 
 
 /*
